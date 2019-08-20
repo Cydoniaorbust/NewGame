@@ -168,7 +168,6 @@ int main(int argc, char * argv[]) {
 		env.ApplyTests();
 
 		manager.SetData();
-
 		
 		env.Loop(Update, Draw, cam.pos, cam.view, ConsoleInfo);
 	}

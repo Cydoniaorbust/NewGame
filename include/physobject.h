@@ -2,7 +2,7 @@
 
 #include "Entity.h"
 
-enum class Movement { FORWARD, BACKWARD, LEFT, RIGHT, SET } ;
+enum class Movement: int { FORWARD, BACKWARD, LEFT, RIGHT, SET } ;
 
 class PhysObject : public Entity {
 private:

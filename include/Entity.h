@@ -22,9 +22,15 @@ public:
 
 	glm::mat4 GetPosition() { return position; }
 	#pragma region Movements	
-	void MoveX(GLfloat _delta) { position = translate(position, glm::vec3(_delta * stepMove, 0, 0)); }
-	void MoveY(GLfloat _delta) { position = translate(position, glm::vec3(0, _delta * stepMove, 0)); }
-	void MoveZ(GLfloat _delta) { position = translate(position, glm::vec3(0, 0, _delta * stepMove)); }
+	void MoveX(GLfloat _delta) { 
+		position = glm::translate(position, glm::vec3(_delta * stepMove, 0, 0));
+	}
+	void MoveY(GLfloat _delta) { 
+		position = glm::translate(position, glm::vec3(0, _delta * stepMove, 0));
+	}
+	void MoveZ(GLfloat _delta) { 
+		position = glm::translate(position, glm::vec3(0, 0, _delta * stepMove));
+	}
 	void SetPos(GLfloat _x, GLfloat _y) { position[3][0] = _x; position[3][2] = _y; }
 
 	void ScaleAll(GLfloat _delta) {

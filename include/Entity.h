@@ -6,7 +6,7 @@ private:
 	GLuint shader = 0;
 	Model* model;
 
-	glm::mat4 position;
+	glm::mat4 position = glm::mat4(1.0);
 
 	float stepMove = 1.0f;
 	float stepRotate = 1.0f;

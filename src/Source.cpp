@@ -29,7 +29,7 @@ void ConsoleInfo() {
 	system("cls");
 
 	std::cout << std::fixed << std::setprecision(4);
-	std::cout << "Ticks since system started: " << GetTickCount() << std::endl;
+	std::cout << "Millis since program started: " << Clock::now().time_since_epoch().count() / 1000000 << std::endl;
 	std::cout << "TPS: " << env.CountTPS() << std::endl;
 	std::cout << "FPS: " << env.CountFPS() << std::endl;
 	std::cout << "Delta (time between updates): " << env.delta << std::endl;

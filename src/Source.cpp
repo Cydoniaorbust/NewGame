@@ -146,17 +146,6 @@ void CallbackKey(GLFWwindow* _win, int _key, int _scancode, int _action, int _mo
 
 int main(int argc, char * argv[]) {
 	try {
-		/*
-		std::function<void(int, int)> foo = [](int a, int b) { std::cout << a; };
-		foo(3, 5);
-		auto bar = std::bind(
-			Manager::Draw, manager, 
-			std::placeholders::_1, 
-			std::placeholders::_2, 
-			std::placeholders::_3, 
-			std::placeholders::_4);			
-		*/
-
 		env.InitWin(800, 800, "OpenGL");
 
 		env.CallbackFramebufferSize(CallbackFramebufferSize);
@@ -172,7 +161,7 @@ int main(int argc, char * argv[]) {
 		env.Loop(Update, Draw, cam.pos, cam.view, ConsoleInfo);
 	}
 	catch (Error* _e) {
-		std::cout << _e->GetData() << std::endl;
+		std::cout << _e->what() << std::endl;
 		delete _e;
 		glfwTerminate();
 	}
